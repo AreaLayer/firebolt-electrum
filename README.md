@@ -1,4 +1,4 @@
-# Firebolt Electrum Plugin (Experimental)
+# Firebolt Electrum Plugin (Experimental) ⚡ 🕵️
 
 Firebolt electrum plugin
 
