@@ -5,6 +5,12 @@ from electrum.i18n import _
 from electrum.gui.qt.util import EnterButton, WindowModalDialog
 from .coinjoin import CoinJoinManager
 
+
+fullname = 'firebolt' 
+description = _("coinjoin implementation for P2P") 
+available_for = ['qt']
+
+
 class P2PCoinJoinPlugin(BasePlugin):
 
     def __init__(self, parent, config, name):
