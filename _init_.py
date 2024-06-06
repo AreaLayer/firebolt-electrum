@@ -4,6 +4,7 @@ import asyncio
 from electrum.plugin import BasePlugin, hook
 from electrum.i18n import _
 from electrum.gui.qt.util import EnterButton, WindowModalDialog
+from electrum.wallet import Wallet
 from .coinjoin import CoinJoinManager
 
 
@@ -19,22 +20,22 @@ class P2PCoinJoinPlugin(BasePlugin):
         self.coinjoin_manager = CoinJoinManager()
 
     @hook
-    def load_wallet(self, wallet, window):
+    def load_wallet(self, wallet: Wallet, window):
         button = EnterButton(_("P2P CoinJoin"), lambda: self.start_coinjoin(window, wallet))
         window.buttons.add(button)
 
-    def start_coinjoin(self, window, wallet):
+    def start_coinjoin(self, window, wallet: Wallet):
         d = WindowModalDialog(window, _("P2P CoinJoin"))
         d.setMinimumWidth(500)
         vbox = d.layout()
-        
-        # Add UI elements for CoinJoin configuration here
+
+        # UI elements for CoinJoin configuration 
         
         vbox.addWidget(EnterButton(_("Start CoinJoin"), lambda: self.run_coinjoin(d, wallet)))
         
         d.exec_()
-    
-    def run_coinjoin(self, dialog, wallet):
+
+    def run_coinjoin(self, dialog, wallet: Wallet):
         dialog.show_message(_("Starting CoinJoin..."))
 
         # Example call to the CoinJoin manager with asyncio
@@ -45,4 +46,5 @@ class P2PCoinJoinPlugin(BasePlugin):
             dialog.show_message(_("CoinJoin complete!"))
         else:
             dialog.show_error(_("CoinJoin failed."))
+
 
