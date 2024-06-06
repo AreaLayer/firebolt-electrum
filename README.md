@@ -15,6 +15,7 @@ Firebolt electrum plugin
 
 - Phython installed
 - Electrum developer mode
+- Testnet/Signet compatible
 
 ### Run electrum
 
