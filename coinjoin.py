@@ -21,8 +21,8 @@ class CoinJoinManager:
         return str(random.randint(100000, 999999))
 
     def _discover_peers(self):
-        # Pseudo code for discovering peers
-        # In a real implementation, this would involve network communication
+        self.peers.peer1
+        self.peers.peer2
         self.peers = ["peer1", "peer2", "peer3"]
     
     def _send_coinjoin_requests(self, wallet):
