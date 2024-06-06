@@ -25,4 +25,5 @@
 ## Observasions
 
 ⚠️ It is not compatible with Lighting Network
+
 ⚠️ Not use for mainnet
