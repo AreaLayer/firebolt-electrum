@@ -24,6 +24,6 @@
 ``
 ### Observations
 
-⚠️ It is not compatible with Lighting Network
+⚠️ It is not compatible with Lightning Network
 
 ⚠️ Not use for mainnet
