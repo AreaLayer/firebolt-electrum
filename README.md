@@ -2,8 +2,6 @@
 
 Firebolt electrum plugin
 
-## How works?
-
 **CoinJoin Process:**
 
  1. Peer Discovery: Discover peers and establish connections.
