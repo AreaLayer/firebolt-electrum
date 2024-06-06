@@ -21,7 +21,7 @@ class CoinJoinManager:
         return str(random.randint(100000, 999999))
 
     async def _discover_peers(self):
-        # Example: Simulate peer discovery (in a real-world application, this would involve network communication)
+        # Peer discovery (in a real-world application, this would involve network communication)
         await asyncio.sleep(1)  # Simulate network delay
         self.peers = ["127.0.0.1:12345", "127.0.0.1:12346", "127.0.0.1:12347"]
         print(f"Discovered peers: {self.peers}")
