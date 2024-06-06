@@ -2,7 +2,7 @@ import asyncio
 import random
 import json
 from electrum.transaction import Transaction, TxOutput
-from electrum.bitcoin import TYPE_ADDRESS
+from electrum.bitcoin import TYPE_ADDRESS, is_address
 from electrum.wallet import Wallet
 
 class CoinJoinManager:
@@ -51,8 +51,9 @@ class CoinJoinManager:
 
             response_data = json.loads(response.decode())
             if response_data.get("status") == "ACK":
-                self.outputs.append(TxOutput(TYPE_ADDRESS, response_data["address"], response_data["amount"]))
-                return True
+                if is_address(response_data["address"]):
+                    self.outputs.append(TxOutput(TYPE_ADDRESS, response_data["address"], response_data["amount"]))
+                    return True
             return False
         except Exception as e:
             print(f"Failed to communicate with {peer}: {e}")
@@ -64,7 +65,7 @@ class CoinJoinManager:
         return json.dumps({
             "session_id": self.session_id,
             "wallet_info": "example",
-            "address": "your_contribution_address",  # Replace with actual address
+            "address": wallet.get_receiving_address(),  # Replace with actual address
             "amount": 100000  # Replace with actual contribution amount
         })
 
@@ -93,7 +94,7 @@ async def handle_client(reader, writer):
     # Example response for CoinJoin request
     response = {
         "status": "ACK",
-        "address": "peer_contribution_address",  # Replace with actual address
+        "address": "tb1qexampleaddress",  # Replace with actual testnet address
         "amount": 100000  # Replace with actual amount
     }
 
@@ -120,4 +121,3 @@ if __name__ == "__main__":
     # wallet = ...  # Get the wallet instance
     # coinjoin_manager = CoinJoinManager()
     # asyncio.run(coinjoin_manager.initiate_coinjoin(wallet, known_peers))
-
