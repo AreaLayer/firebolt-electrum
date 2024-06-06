@@ -22,7 +22,7 @@
 ``
 ./run_electrum
 ``
-## Observasions
+## Observations
 
 ⚠️ It is not compatible with Lighting Network
 
