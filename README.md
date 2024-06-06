@@ -1,6 +1,6 @@
 # Firebolt Electrum Plugin (Experimental) ⚡ 🕵️
 
-Firebolt electrum plugin
+>Firebolt electrum plugin
 
 **CoinJoin Process:**
 
