@@ -60,7 +60,7 @@ class CoinJoinManager:
             return False
 
     def _create_coinjoin_request(self, wallet: Wallet):
-        # Create a CoinJoin request message (pseudo code)
+        # CoinJoin request message (pseudo code)
         # Include necessary wallet information (e.g., contribution amount, address)
         return json.dumps({
             "session_id": self.session_id,
@@ -74,7 +74,7 @@ class CoinJoinManager:
             print("No outputs collected for CoinJoin")
             return False
 
-        # Example: Create a basic CoinJoin transaction with collected outputs
+        # Example: Basic CoinJoin transaction with collected outputs
         tx = wallet.make_unsigned_transaction([], self.outputs, fee=1000)
         
         # Sign the transaction
@@ -91,7 +91,7 @@ async def handle_client(reader, writer):
     message = data.decode()
     request = json.loads(message)
 
-    # Example response for CoinJoin request
+    # Response for CoinJoin request
     response = {
         "status": "ACK",
         "address": "tb1qexampleaddress",  # Replace with actual testnet address
