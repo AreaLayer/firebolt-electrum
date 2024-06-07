@@ -27,3 +27,8 @@
 **⚠️ It is not compatible with Lightning Network**
 
 **⚠️ Not use for mainnet**
+
+## Roadmap
+
+- [ ] Open source
+- [x] Fixed bugs
