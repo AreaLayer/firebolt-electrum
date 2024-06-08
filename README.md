@@ -26,7 +26,7 @@
 
 **⚠️ It is not compatible with Lightning Network**
 
-**⚠️ Not use for mainnet**
+**⚠️ Don't use for mainnet**
 
 ## Roadmap
 
