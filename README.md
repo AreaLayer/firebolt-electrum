@@ -2,6 +2,8 @@
 
 >Firebolt electrum plugin
 
+>Alpha software and experimental
+
 **CoinJoin Process:**
 
  1. Peer Discovery: Discover peers and establish connections.
