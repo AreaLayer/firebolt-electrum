@@ -4,7 +4,7 @@
 
 >Alpha software and experimental
 
-**CoinJoin Process:**
+*CoinJoin Process:*
 
  1. Peer Discovery: Discover peers and establish connections.
  2. CoinJoin Request: Send CoinJoin requests to peers and await responses.
