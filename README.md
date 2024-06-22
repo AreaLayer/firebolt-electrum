@@ -6,10 +6,10 @@
 
 **CoinJoin Process:**
 
- 1. Peer Discovery: Discover peers and establish connections.
+ *1. Peer Discovery: Discover peers and establish connections.
  2. CoinJoin Request: Send CoinJoin requests to peers and await responses.
  3. Transaction Creation and Signing: If peers acknowledge the CoinJoin request, create and sign the CoinJoin transaction.
- 4.  Broadcasting: Broadcast the final CoinJoin transaction to the Bitcoin network.
+ 4.  Broadcasting: Broadcast the final CoinJoin transaction to the Bitcoin network.*
 
 ### Run software
 
