@@ -4,7 +4,12 @@ import json
 from electrum.transaction import Transaction, TxOutput
 from electrum.bitcoin import TYPE_ADDRESS, is_address
 from electrum.wallet import Wallet
+from electrum.network import Network
 
+async def handle_client(reader, writer):
+    data = await reader.read(1000)
+    message = data.decode()
+    request = json.loads(message)
 class CoinJoinManager:
 
     def __init__(self):
