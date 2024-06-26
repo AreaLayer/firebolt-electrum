@@ -27,6 +27,15 @@ class CoinJoinManager:
         self.peers = []
         self.session_id = None
         self.outputs = []
+        self = Network()
+
+    async def Network(self, network, wallet: Wallet, known_peers):
+        self.network = network
+        self.wallet = wallet
+        self.known_peers = known_peers
+        self.network = (Testnet, Signet, Regtest)
+    
+    if not self.network: self.network = bitcoin.network.Network()
 
     async def initiate_coinjoin(self, wallet: Wallet, known_peers):
         self.session_id = self._generate_session_id()
