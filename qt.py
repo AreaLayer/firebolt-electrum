@@ -6,6 +6,17 @@ from electrum.bitcoin import TYPE_ADDRESS, is_address
 from electrum.wallet import Wallet
 from electrum.network import Network
 
+
+async def _discover_peers(self, known_peers):
+    for peer in known_peers:
+        try:
+            reader, writer = await asyncio.open_connection(peer)
+            self.peers.append((reader, writer))
+        except ConnectionRefusedError:
+            print(f"Connection refused by {peer}")
+        except Exception as e:
+            print(f"Failed to connect to {peer}: {e}")
+
 async def handle_client(reader, writer):
     data = await reader.read(1000)
     message = data.decode()
