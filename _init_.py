@@ -6,6 +6,7 @@ from electrum.i18n import _
 from electrum.gui.qt.util import EnterButton, WindowModalDialog
 from electrum.wallet import Wallet
 from .coinjoin import CoinJoinManager
+from .coinjoin_config import CoinJoinConfig
 
 
 fullname = 'firebolt' 
