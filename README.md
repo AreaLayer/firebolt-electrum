@@ -35,5 +35,5 @@
 
 ## Roadmap
 
-- [ ] Open source
+- [x] Open source
 - [x] Fixed bugs
