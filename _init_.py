@@ -48,4 +48,11 @@ class P2PCoinJoinPlugin(BasePlugin):
         else:
             dialog.show_error(_("CoinJoin failed."))
 
+    def tests(self):
+        pass
 
+    self.P2PCoinJoinPlugin.load_wallet(wallet, window)
+    self.start_coinjoin(window, wallet)
+    self.run_coinjoin(d, wallet)
+    self.tests()
+    self.stop_coinjoin()
