@@ -37,3 +37,4 @@
 
 - [x] Open source
 - [x] Fixed bugs
+- [ ] Release PY packages
