@@ -1,4 +1,4 @@
-### Firebolt-Electrum Mini Tutorial
+### Firebolt Electrum Mini Tutorial
 
 #### Prerequisites
 
@@ -8,7 +8,7 @@ Before running the Firebolt-Electrum software, ensure you have the following:
 - Electrum set up in developer mode.
 - A Testnet or Signet compatible setup for testing purposes.
 
-#### Setting Up Firebolt-Electrum
+#### Setting Up Firebolt Electrum
 
 1. **Clone the Repository**
 
@@ -67,7 +67,7 @@ After following the steps above, you should have Firebolt-Electrum up and runnin
 
 If you encounter any issues or need further assistance, refer to the [Firebolt-Electrum GitHub repository](https://github.com/AreaLayer/firebolt-electrum) for more detailed instructions and troubleshooting tips.
 
-#### Contributing to Firebolt-Electrum
+#### Contributing to Firebolt Electrum
 
 If you wish to contribute to the project, follow these steps:
 
