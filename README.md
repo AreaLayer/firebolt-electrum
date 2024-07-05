@@ -16,17 +16,8 @@
 
 ### Run software
 
-**Pre Requisite**
-
-- Phython installed
-- Electrum developer mode
-- Testnet/Signet compatible
-
-### Run electrum
-
-``
-./run_electrum
-``
+- [Tutorial](https://github.com/AreaLayer/firebolt-electrum/blob/main/docs/tutorial.md)
+  
 ### Observations
 
 **⚠️ It is not compatible with Lightning Network**
@@ -37,4 +28,5 @@
 
 - [x] Open source
 - [x] Fixed bugs
+- [x] Tutorial
 - [ ] Release PY packages
