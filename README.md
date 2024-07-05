@@ -16,7 +16,7 @@
 
 ### Run software
 
-- [Tutorial](https://github.com/AreaLayer/firebolt-electrum/blob/main/docs/tutorial.md)
+[Tutorial](https://github.com/AreaLayer/firebolt-electrum/blob/main/docs/tutorial.md)
   
 ### Observations
 
