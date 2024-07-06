@@ -39,7 +39,7 @@ Before running the Firebolt-Electrum software, ensure you have the following:
 
 4. **Run Firebolt-Electrum**
 
-   To start the Firebolt-Electrum application, use the provided script:
+   To start the firebolt-electrum application, use the provided script:
 
    ```sh
    ./run_electrum
