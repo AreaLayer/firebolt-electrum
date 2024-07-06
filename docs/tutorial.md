@@ -2,7 +2,7 @@
 
 #### Prerequisites
 
-Before running the Firebolt-Electrum software, ensure you have the following:
+Before running the Firebolt Electrum software, ensure you have the following:
 
 - Python installed on your system. You can download it from the [official website](https://www.python.org/downloads/).
 - Electrum set up in developer mode.
