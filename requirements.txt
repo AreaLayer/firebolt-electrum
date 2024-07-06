@@ -1,1 +1,2 @@
-
+pyhthon = 3.12
+electrum = 4.5.5
