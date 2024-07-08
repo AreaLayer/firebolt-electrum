@@ -1,7 +1,5 @@
 # Firebolt Electrum Plugin (Experimental) ⚡ 🕵️
 
-![Banner](https://github.com/AreaLayer/FireBolt/raw/main/src/asset/firebolt_logo_readme.png)
-
 >Firebolt electrum plugin
 
 >Alpha software and experimental
