@@ -29,4 +29,6 @@
 - [x] Open source
 - [x] Fixed bugs
 - [x] Tutorial
+- [x] Testnet3
+- [ ] Testnet4
 - [ ] Release PY packages
