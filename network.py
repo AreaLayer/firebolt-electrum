@@ -1,7 +1,7 @@
 from bitcoinlib.networks import Network
 
 class BitcoinNetworkManager:
-    def __init__(self, network_type='mainnet'):
+    def __init__(self, network_type='signet'):
         self.network_type = network_type
         self.network = self.set_network()
 
