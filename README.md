@@ -4,6 +4,8 @@
 
 >Alpha software and experimental
 
+>Contributions are welcome 
+
 **CoinJoin Process:**
 
  1. Peer Discovery: Discover peers and establish connections.
