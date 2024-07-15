@@ -34,4 +34,4 @@
 - [x] Testnet3
 - [ ] Testnet4
 - [ ] Release PY packages
-- [ ] Add ZK proof
+- [ ] ZK proof
