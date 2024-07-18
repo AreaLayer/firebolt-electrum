@@ -26,6 +26,8 @@
 
 **⚠️ Don't use for mainnet**
 
+**⚠️ Use Testnet4**
+
 ## Roadmap
 
 - [x] Open source
