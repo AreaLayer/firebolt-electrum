@@ -1,6 +1,7 @@
 import asyncio
 import random
 import json
+import zkproof
 from electrum.transaction import Transaction, TxOutput
 from electrum.bitcoin import TYPE_ADDRESS, is_address
 from electrum.wallet import Wallet
