@@ -2,7 +2,7 @@
 name = "firebolt-electrum"
 version = "0.1.0"
 description = "Firebolt Electrum is a lightweight Bitcoin client."
-authors = ["22388oo"]
+authors = ["22388oo", "AreaLayer", "Rsync25"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/AreaLayer/firebolt-electrum"
