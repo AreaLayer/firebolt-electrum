@@ -27,7 +27,7 @@ attrs = "^21.2.0"
 PyQt5 = "^5.15.4"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2.4"
+pytest = "^8.0.0"
 black = "^21.6b0"
 isort = "^5.9.1"
 flake8 = "^3.9.2"
