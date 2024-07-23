@@ -34,6 +34,6 @@
 - [x] Fixed bugs
 - [x] Tutorial
 - [x] Testnet3
-- [ ] Testnet4
+- [x] Testnet4
 - [ ] Release PY packages
 - [ ] ZK proof
