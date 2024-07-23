@@ -31,7 +31,7 @@ pytest = "^6.2.4"
 black = "^21.6b0"
 isort = "^5.9.1"
 flake8 = "^3.9.2"
-mypy = "^0.902"
+mypy = "^1.0.0"
 
 [build-system]
 requires = ["poetry>=0.12"]
