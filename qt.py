@@ -7,7 +7,6 @@ from electrum.bitcoin import TYPE_ADDRESS, is_address
 from electrum.wallet import Wallet
 from electrum.network import Network
 from Crypto.Cipher import AES
-from Crypto.Hash import HMAC, SHA256
 from Crypto.Random import get_random_bytes
 
 async def _discover_peers(self, known_peers):

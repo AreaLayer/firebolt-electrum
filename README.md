@@ -36,4 +36,4 @@
 - [x] Testnet3
 - [x] Testnet4
 - [ ] Release PY packages
-- [ ] ZK proof
+- [ ] Random Bytes and AES
