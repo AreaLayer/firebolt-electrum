@@ -7,6 +7,7 @@ from electrum.gui.qt.util import EnterButton, WindowModalDialog
 from electrum.wallet import Wallet
 from .coinjoin import CoinJoinManager
 from .coinjoin_config import CoinJoinConfig
+from pyGroth import groth16
 
 
 fullname = 'firebolt' 
