@@ -36,4 +36,4 @@
 - [x] Testnet3
 - [x] Testnet4
 - [ ] Release PY packages
-- [ ] Random Bytes and AES
+- [x] Random Bytes and AES
