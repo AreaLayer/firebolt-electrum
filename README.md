@@ -4,7 +4,7 @@
 
 >Firebolt electrum plugin
 
->Alpha software and experimental
+>Beta software, experimental & WIP
 
 >Contributions are welcome 
 
