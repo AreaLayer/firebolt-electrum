@@ -8,6 +8,7 @@ from electrum.network import Network
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
+from datetime import datetime, timedelta
 
 class CoinJoinManager:
 
@@ -106,7 +107,36 @@ class CoinJoinManager:
 
         return result is not None
 
+# Dictionary to track request counts and time windows
+request_counts = {}
+time_window = timedelta(seconds=60)  # Time window for rate limiting
+request_limit = 10  # Maximum requests allowed per IP within the time window
+blacklisted_ips = set()  # Set to store blacklisted IP addresses
+
 async def handle_client(reader, writer):
+    peername = writer.get_extra_info('peername')
+    ip = peername[0]
+
+    # Check if IP is blacklisted
+    if ip in blacklisted_ips:
+        writer.close()
+        await writer.wait_closed()
+        return
+
+    # Rate limiting
+    now = datetime.now()
+    if ip not in request_counts:
+        request_counts[ip] = []
+    request_counts[ip] = [timestamp for timestamp in request_counts[ip] if now - timestamp < time_window]
+    
+    if len(request_counts[ip]) >= request_limit:
+        blacklisted_ips.add(ip)
+        writer.close()
+        await writer.wait_closed()
+        return
+    
+    request_counts[ip].append(now)
+
     data = await reader.read(1000)
     message = data.decode()
     request = json.loads(message)
