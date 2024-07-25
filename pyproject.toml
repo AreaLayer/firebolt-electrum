@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "firebolt-electrum"
-version = "0.1.0"
+version = "1.0.0-beta"
 description = "Firebolt Electrum is a lightweight Bitcoin client."
 authors = ["22388oo", "AreaLayer", "Rsync25"]
 license = "MIT"
