@@ -1,2 +1,3 @@
 pyhthon == 3.12
 electrum == 4.5.5
+pycryptodome == 3.20.0
