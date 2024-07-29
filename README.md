@@ -32,10 +32,4 @@
 
 ## Roadmap
 
-- [x] Open source
-- [x] Fixed bugs
-- [x] Tutorial
-- [x] Testnet3
-- [x] Testnet4
 - [ ] Release PY packages
-- [x] Random Bytes and AES
