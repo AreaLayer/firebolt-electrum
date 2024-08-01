@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "firebolt-electrum"
 version = "1.0.0-beta"
-description = "Firebolt Electrum is a lightweight Bitcoin client."
+description = "Firebolt Electrum is a lightweight plugin for Electrum that allows you to connect to CoinJoins"
 authors = ["22388oo", "AreaLayer", "Rsync25"]
 license = "MIT"
 readme = "README.md"
