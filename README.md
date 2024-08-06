@@ -33,3 +33,5 @@
 ## Roadmap
 
 - [ ] Release PY packages
+- [ ] Lightning compatibility
+- [ ] Add more tests
