@@ -24,8 +24,6 @@
   
 ### Observations
 
-**⚠️ It is not compatible with Lightning Network**
-
 **⚠️ Don't use for mainnet**
 
 **⚠️ Use Testnet4**
