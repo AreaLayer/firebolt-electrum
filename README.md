@@ -33,6 +33,6 @@
 ## Roadmap
 
 - [ ] Release PY packages
-- [ ] Lightning compatibility
+- [x] Lightning compatibility
 - [ ] Add more tests
 - [ ] Mainnet

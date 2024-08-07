@@ -5,6 +5,9 @@ from electrum.transaction import Transaction, TxOutput
 from electrum.bitcoin import TYPE_ADDRESS, is_address
 from electrum.wallet import Wallet
 from electrum.network import Network
+from electrum.lnutil import LnFeatures
+from electrum.lnaddr import lndecode
+from electrum.lnwallet import LNWallet, LNWorker
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
@@ -106,6 +109,15 @@ class CoinJoinManager:
         print(f"Broadcast result: {result}")
 
         return result is not None
+
+    async def create_ln_invoice(self, amount_sat: int, memo: str = ''):
+        ln_wallet: LNWallet = self.wallet.lnworker
+        if ln_wallet:
+            invoice = await ln_wallet.add_request(amount_sat, memo, expiry=3600)
+            return invoice
+        else:
+            print("LNWallet not initialized")
+            return None
 
 # Dictionary to track request counts and time windows
 request_counts = {}
