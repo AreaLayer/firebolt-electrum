@@ -16,5 +16,5 @@ class BitcoinNetworkManager:
             raise ValueError("Unsupported network type")
 
 # Example usage
-network_manager = BitcoinNetworkManager(network_type='testnet')
+network_manager = BitcoinNetworkManager(network_type='signet')
 print(f"Connected to {network_manager.network_type}")
