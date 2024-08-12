@@ -32,5 +32,4 @@
 
 - [ ] Release PY packages
 - [x] Lightning compatibility
-- [ ] Add more tests
 - [ ] Mainnet
