@@ -10,7 +10,7 @@ from .coinjoin_config import CoinJoinConfig
 
 
 fullname = 'firebolt' 
-description = _("coinjoin implementation for P2P") 
+description = _("coinjoin  for P2P") 
 available_for = ['qt']
 
 
