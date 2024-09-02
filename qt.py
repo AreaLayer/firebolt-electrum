@@ -22,12 +22,14 @@ class CoinJoinManager:
         self.network = None
         self.wallet = None
         self.known_peers = None
+        self.ln_wallet = None
 
     async def Network(self, network, wallet: Wallet, known_peers):
         self.network = network
         self.wallet = wallet
         self.known_peers = known_peers
         self.network = (Testnet, Signet, Regtest)
+        self.wallet = Wallet()
     
         if not self.network: 
             self.network = Network()
