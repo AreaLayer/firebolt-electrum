@@ -18,7 +18,7 @@
     
  4. Broadcasting: Broadcast the final CoinJoin transaction to the Bitcoin network.
 
-### Run software
+### Run Firebolt Electrum Plugin
 
 [Tutorial](https://github.com/AreaLayer/firebolt-electrum/blob/main/docs/tutorial.md)
   
