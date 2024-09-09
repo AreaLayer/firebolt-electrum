@@ -31,5 +31,4 @@
 ## Roadmap
 
 - [ ] Release PY packages
-- [x] Lightning compatibility (LND, Eclair, etc)
 - [ ] Mainnet
