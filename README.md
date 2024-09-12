@@ -30,5 +30,4 @@
 
 ## Roadmap
 
-- [ ] Release PY packages
 - [ ] Mainnet
