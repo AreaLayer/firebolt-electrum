@@ -31,3 +31,4 @@
 ## Roadmap
 
 - [ ] Mainnet
+- [ ] Groth16
