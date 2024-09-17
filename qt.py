@@ -11,6 +11,8 @@ from electrum.lnwallet import LNWallet, LNWorker
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
+from zksk import Secret, DLRep
+from zksk import utils
 from datetime import datetime, timedelta
 
 class CoinJoinManager:
@@ -36,6 +38,8 @@ class CoinJoinManager:
 
     async def initiate_coinjoin(self, wallet: Wallet, known_peers):
         self.session_id = self._generate_session_id()
+        sef.Secret = Secret(utils.get_random_secret())
+        self.DLRep = DLRep(self.Secret, self.session_id)
         await self._discover_peers(known_peers)
 
         success = await self._send_coinjoin_requests(wallet)
@@ -62,6 +66,10 @@ class CoinJoinManager:
             host, port = peer.split(':')
             reader, writer = await asyncio.open_connection(host, int(port))
             
+            # ZK proof keys and encrypt the request
+            Secret = DLRep(utils.get_random_secret())
+            request = self._create_coinjoin_request(wallet)
+
             # Generate AES key and encrypt the request
             key = get_random_bytes(16)  # AES-128, for AES-256 use 32 bytes
             request = self._create_coinjoin_request(wallet)
