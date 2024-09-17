@@ -31,4 +31,4 @@
 ## Roadmap
 
 - [ ] Mainnet
-- [ ] Groth16 (ZK Proof)
+- [x] Groth16 (ZK Proof)
