@@ -65,7 +65,7 @@ class CoinJoinManager:
         try:
             host, port = peer.split(':')
             reader, writer = await asyncio.open_connection(host, int(port))
-            
+        
             # ZK proof keys and encrypt the request
             Secret = DLRep(utils.get_random_secret())
             request = self._create_coinjoin_request(wallet)
@@ -76,7 +76,14 @@ class CoinJoinManager:
             cipher = AES.new(key, AES.MODE_EAX)
             nonce = cipher.nonce
             ciphertext, tag = cipher.encrypt_and_digest(pad(request.encode(), AES.block_size))
-            
+        
+            # Send keys and encrypted ZK proof
+            writer.write(json.dumps({
+                "secret": self.Secret.value,
+                "session_id": self.session_id,
+                "DLRep": self.DLRep.value
+            }).encode())
+            await writer.drain()
             # Send the key and encrypted message
             writer.write(json.dumps({
                 "key": key.hex(),
