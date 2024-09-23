@@ -9,8 +9,8 @@ from .coinjoin import CoinJoinManager
 from .coinjoin_config import CoinJoinConfig
 
 
-fullname = 'firebolt' 
-description = _("Coinjoin in P2P") 
+fullname = 'firebolt-electrum' 
+description = _("P2P Coinjoin") 
 available_for = ['qt']
 
 
