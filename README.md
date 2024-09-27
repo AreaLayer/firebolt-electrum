@@ -1,4 +1,4 @@
-# Firebolt Electrum Plugin (Experimental) ⚡ 🕵️
+# Firebolt Electrum Plugin (Experimental) ⚡ 🕵️🌀
 
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 
