@@ -1,4 +1,4 @@
 python == 24.2
 electrum == 4.5.5
-pycryptodome == 3.20.0
+pycryptodome ==3.21.0
 zksk == 0.2.2
