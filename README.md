@@ -26,7 +26,7 @@
 
 **⚠️ Don't use for mainnet**
 
-**⚠️ Use Testnet4**
+**⚠️ Use Signet**
 
 ## Roadmap
 
