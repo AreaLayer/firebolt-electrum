@@ -30,5 +30,5 @@
 
 ## Roadmap
 
-- [x] Mainnet (WIP)
+- [ ] Mainnet in 2025
 - [x] Groth16 (ZK Proof)
