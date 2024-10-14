@@ -1,12 +1,10 @@
 # Firebolt Electrum Plugin (Experimental) ⚡ 🕵️🌀
 
+**Contributions are welcome**
+
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 
->Firebolt electrum plugin
-
 >Beta software, experimental & WIP
-
->Contributions are welcome 
 
 **CoinJoin Process:**
 
