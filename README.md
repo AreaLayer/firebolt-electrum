@@ -30,3 +30,4 @@
 
 - [ ] Mainnet in 2025
 - [x] Groth16 (ZK Proof)
+- [x] CoinJoin
