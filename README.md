@@ -28,4 +28,4 @@
 
 ## Roadmap
 
-- [ ] Mainnet in 2025 
+- [ ] Mainnet in 2025 & final verion
