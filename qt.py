@@ -30,7 +30,7 @@ class CoinJoinManager:
         self.network = network
         self.wallet = wallet
         self.known_peers = known_peers
-        self.network = (Signet)
+        self.network = (Bitcoin.Network(network))
         self.wallet = Wallet()
     
         if not self.network: 

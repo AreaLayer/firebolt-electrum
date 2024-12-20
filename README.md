@@ -1,4 +1,4 @@
-# Firebolt Electrum Plugin (Experimental) ⚡ 🕵️🌀
+# Firebolt Electrum Plugin ⚡ 🕵️🌀
 
 **Contributions are welcome**
 
@@ -15,6 +15,9 @@
  3. Transaction Creation and Signing: If peers acknowledge the CoinJoin request, create and sign the CoinJoin transaction.
     
  4. Broadcasting: Broadcast the final CoinJoin transaction to the Bitcoin network.
+
+ 5. Finalization: Wait for the transaction to be confirmed on the Bitcoin network.
+
 
 ### Run Firebolt Electrum Plugin
 
