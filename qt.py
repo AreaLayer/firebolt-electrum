@@ -5,14 +5,12 @@ from electrum.transaction import Transaction, TxOutput
 from electrum.bitcoin import TYPE_ADDRESS, is_address
 from electrum.wallet import Wallet
 from electrum.network import Network
-from electrum.lnutil import LnFeatures
-from electrum.lnaddr import lndecode
-from electrum.lnwallet import LNWallet, LNWorker
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
 from zksk import Secret, DLRep
 from zksk import utils
+from pqcrypto.kem.kyber import generate_keypair, encrypt, decrypt
 from datetime import datetime, timedelta
 
 class CoinJoinManager:
@@ -24,22 +22,19 @@ class CoinJoinManager:
         self.network = None
         self.wallet = None
         self.known_peers = None
-        self.ln_wallet = None
+        self.shared_secrets = {}  # Store shared secrets with peers
 
-    async def Network(self, network, wallet: Wallet, known_peers):
+    async def setup_network(self, network, wallet: Wallet, known_peers):
         self.network = network
         self.wallet = wallet
         self.known_peers = known_peers
-        self.network = (Bitcoin.Network(network))
-        self.wallet = Wallet()
-    
         if not self.network: 
             self.network = Network()
 
     async def initiate_coinjoin(self, wallet: Wallet, known_peers):
         self.session_id = self._generate_session_id()
-        sef.Secret = Secret(utils.get_random_secret())
-        self.DLRep = DLRep(self.Secret, self.session_id)
+        self.secret = Secret(utils.get_random_secret())
+        self.zk_proof = DLRep(self.secret, self.session_id)
         await self._discover_peers(known_peers)
 
         success = await self._send_coinjoin_requests(wallet)
@@ -65,34 +60,40 @@ class CoinJoinManager:
         try:
             host, port = peer.split(':')
             reader, writer = await asyncio.open_connection(host, int(port))
-        
-            # ZK proof keys and encrypt the request
-            Secret = DLRep(utils.get_random_secret())
-            request = self._create_coinjoin_request(wallet)
 
-            # Generate AES key and encrypt the request
-            key = get_random_bytes(16)  # AES-128, for AES-256 use 32 bytes
+            # Generate PQC key pair (CRYSTALS-Kyber)
+            public_key, private_key = generate_keypair()
+            self.shared_secrets[peer] = private_key
+
+            # Send public key to peer
+            writer.write(json.dumps({"public_key": public_key.hex()}).encode())
+            await writer.drain()
+
+            # Receive encrypted session key from peer
+            response = await reader.read(1000)
+            response_data = json.loads(response.decode())
+            encrypted_session_key = bytes.fromhex(response_data['encrypted_key'])
+
+            # Decrypt session key
+            session_key = decrypt(self.shared_secrets[peer], encrypted_session_key)
+
+            # Create and encrypt CoinJoin request
             request = self._create_coinjoin_request(wallet)
-            cipher = AES.new(key, AES.MODE_EAX)
+            cipher = AES.new(session_key, AES.MODE_EAX)
             nonce = cipher.nonce
             ciphertext, tag = cipher.encrypt_and_digest(pad(request.encode(), AES.block_size))
-        
-            # Send keys and encrypted ZK proof
+
+            # Send encrypted request
             writer.write(json.dumps({
-                "secret": self.Secret.value,
                 "session_id": self.session_id,
-                "DLRep": self.DLRep.value
-            }).encode())
-            await writer.drain()
-            # Send the key and encrypted message
-            writer.write(json.dumps({
-                "key": key.hex(),
+                "zk_proof": self.zk_proof.value,
                 "nonce": nonce.hex(),
                 "ciphertext": ciphertext.hex(),
                 "tag": tag.hex()
             }).encode())
             await writer.drain()
 
+            # Handle response
             response = await reader.read(1000)
             writer.close()
             await writer.wait_closed()
@@ -127,15 +128,6 @@ class CoinJoinManager:
 
         return result is not None
 
-    async def create_ln_invoice(self, amount_sat: int, memo: str = ''):
-        ln_wallet: LNWallet = self.wallet.lnworker
-        if ln_wallet:
-            invoice = await ln_wallet.add_request(amount_sat, memo, expiry=3600)
-            return invoice
-        else:
-            print("LNWallet not initialized")
-            return None
-
 # Dictionary to track request counts and time windows
 request_counts = {}
 time_window = timedelta(seconds=60)  # Time window for rate limiting
@@ -157,23 +149,25 @@ async def handle_client(reader, writer):
     if ip not in request_counts:
         request_counts[ip] = []
     request_counts[ip] = [timestamp for timestamp in request_counts[ip] if now - timestamp < time_window]
-    
+
     if len(request_counts[ip]) >= request_limit:
         blacklisted_ips.add(ip)
         writer.close()
         await writer.wait_closed()
         return
-    
+
     request_counts[ip].append(now)
 
     data = await reader.read(1000)
     message = data.decode()
     request = json.loads(message)
 
+    # Encrypt session key using peer's public key
+    peer_public_key = bytes.fromhex(request['public_key'])
+    encrypted_session_key = encrypt(peer_public_key, get_random_bytes(16))
+
     response = {
-        "status": "ACK",
-        "address": "tb1qexampleaddress",
-        "amount": 100000
+        "encrypted_key": encrypted_session_key.hex()
     }
 
     writer.write(json.dumps(response).encode())
@@ -196,4 +190,4 @@ if __name__ == "__main__":
     # Run the CoinJoin process
     # wallet = ...  # Get the wallet instance
     # coinjoin_manager = CoinJoinManager()
-    # asyncio.run(coinjoin_manager.initiate_coinjoin(wallet, known_peers))
+
