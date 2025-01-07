@@ -32,4 +32,4 @@
 ## Roadmap
 
 - [ ] Mainnet in 2025 & final verion (out of beta)
-- [x] Post quantum resistence Coinjoin
+- [x] Post quantum resistence Coinjoin (beta)
