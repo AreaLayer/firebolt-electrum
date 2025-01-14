@@ -93,3 +93,11 @@ If you wish to contribute to the project, follow these steps:
 5. Create a pull request on GitHub, describing your changes in detail.
 
 By following this mini-tutorial, you should be able to set up and run the Firebolt-Electrum project with ease. If you have any questions or need further assistance, feel free to ask!
+
+## About Post Quantum Computing Resistence Coinjoin
+
+Post-quantum computing resistance is a critical aspect of modern cryptography. It refers to the ability of cryptographic algorithms and protocols to withstand potential attacks from quantum computers. Quantum computers, with their ability to perform complex computations exponentially faster than classical computers, pose a significant threat to the security of traditional cryptographic systems.
+
+Coinjoin is a cryptographic technique used in the Bitcoin and other cryptocurrencies to enhance privacy and anonymity. It involves combining multiple transactions into a single transaction, making it difficult for third parties to trace the origin of funds.
+
+Coinjoin Post Quantum Computing Resistance refers to the ability of coinjoin transactions to resist attacks from quantum computers. This is achieved through the use of post-quantum cryptographic algorithms and protocols that are resistant to quantum computing attacks.
