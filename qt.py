@@ -4,7 +4,7 @@ import json
 from electrum.transaction import Transaction, TxOutput
 from electrum.bitcoin import TYPE_ADDRESS, is_address
 from electrum.wallet import Wallet
-from electrum.network import Network
+from electrum.network import Network, SimpleConfig
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 
 class CoinJoinManager:
 
-    def __init__(self):
+    def __init__(self, network_type="mainnet"):
         self.peers = []
         self.session_id = None
         self.outputs = []
@@ -23,13 +23,32 @@ class CoinJoinManager:
         self.wallet = None
         self.known_peers = None
         self.shared_secrets = {}  # Store shared secrets with peers
+        self.network_type = network_type
 
-    async def setup_network(self, network, wallet: Wallet, known_peers):
-        self.network = network
+    async def setup_network(self, wallet: Wallet, known_peers):
         self.wallet = wallet
         self.known_peers = known_peers
+
+        # Initialize the network based on the desired network type
+        self.network = self._get_network_for_type(self.network_type)
         if not self.network: 
-            self.network = Network()
+            raise ValueError(f"Network type {self.network_type} is not supported")
+
+    def _get_network_for_type(self, network_type):
+        """
+        Returns an appropriate Network instance for the given type.
+        Supports 'mainnet', 'signet', and 'testnet4'.
+        """
+        config = SimpleConfig({"electrumx": {"server": "localhost"}})
+        
+        if network_type == "mainnet":
+            return Network(config)
+        elif network_type == "signet":
+            return Network(SimpleConfig({"network": "signet", "electrumx": {"server": "localhost"}}))
+        elif network_type == "testnet4":
+            return Network(SimpleConfig({"network": "testnet4", "electrumx": {"server": "localhost"}}))
+        else:
+            return None
 
     async def initiate_coinjoin(self, wallet: Wallet, known_peers):
         self.session_id = self._generate_session_id()
@@ -184,10 +203,12 @@ async def run_server():
 if __name__ == "__main__":
     known_peers = ["127.0.0.1:12345", "127.0.0.1:12346", "127.0.0.1:12347"]
 
+    # Choose a network: "mainnet", "signet", "testnet4"
+    coinjoin_manager = CoinJoinManager(network_type="mainnet")
+
     # Run the server for testing (normally, peers would run this)
     asyncio.run(run_server())
 
-    # Run the CoinJoin process
-    # wallet = ...  # Get the wallet instance
-    # coinjoin_manager = CoinJoinManager()
-
+    # Assuming 'wallet' is initialized as needed
+    # await coinjoin_manager.setup_network(wallet, known_peers)
+    # asyncio.run(coinjoin_manager.initiate_coinjoin(wallet, known_peers))

@@ -22,14 +22,8 @@
 ### Run Firebolt Electrum Plugin
 
 [Tutorial](https://github.com/AreaLayer/firebolt-electrum/blob/main/docs/tutorial.md)
-  
-### Observations
-
-**⚠️ Don't use for mainnet**
-
-**⚠️ Use Signet**
 
 ## Roadmap
 
-- [ ] Mainnet in 2025 & final verion (out of beta)
+- [x] Mainnet in 2025 & final verion (out of beta)
 - [x] Post quantum resistence Coinjoin (beta)

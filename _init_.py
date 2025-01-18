@@ -10,7 +10,7 @@ from .coinjoin_config import CoinJoinConfig
 
 
 fullname = 'firebolt-electrum' 
-description = _("P2P Coinjoin") 
+description = _("P2P Coinjoin by ZK Proof") 
 available_for = ['qt']
 
 
