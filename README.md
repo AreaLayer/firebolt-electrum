@@ -1,7 +1,5 @@
 # Firebolt Electrum Plugin ⚡ 🕵️🌀
 
-**Beta software**
-
 **Contributions are welcome**
 
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
@@ -22,8 +20,3 @@
 ### Run Firebolt Electrum Plugin
 
 [Tutorial](https://github.com/AreaLayer/firebolt-electrum/blob/main/docs/tutorial.md)
-
-## Roadmap
-
-- [x] Mainnet in 2025 & final verion (out of beta)
-- [x] Post quantum resistence Coinjoin (beta)
