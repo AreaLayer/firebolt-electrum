@@ -2,6 +2,8 @@
 
 **Contributions are welcome**
 
+**Firebolt Electrum Plugin** is a plugin for the Electrum Bitcoin wallet that enables users to participate in CoinJoin transactions.
+
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 
 **CoinJoin Process:**
