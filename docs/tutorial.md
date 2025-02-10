@@ -6,7 +6,7 @@ Before running the Firebolt Electrum software, ensure you have the following:
 
 - Python installed on your system. You can download it from the [official website](https://www.python.org/downloads/).
 - Electrum set up in developer mode.
-- A Testnet or Signet compatible setup for testing purposes.
+- A Testnet, Signet or Mainnet compatible setup for testing purposes.
 
 #### Setting Up Firebolt Electrum
 
