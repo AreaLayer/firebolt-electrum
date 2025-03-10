@@ -4,7 +4,7 @@
 
 **Contributions are welcome**
 
-**Firebolt Electrum Plugin** is a plugin for the Electrum Bitcoin wallet that enables users to participate in CoinJoin transaction powered by ZK Proofs
+>**Firebolt Electrum Plugin** is a plugin for the Electrum Bitcoin wallet that enables users to participate in CoinJoin transaction powered by ZK Proofs
 
 **CoinJoin Process:**
 
