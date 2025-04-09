@@ -1,4 +1,4 @@
-# Firebolt Electrum Plugin ⚡ 🕵️🌀
+# Firebolt Electrum Plugin w/ Coinjoin ⚡ 🕵️🌀
 
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 
