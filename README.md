@@ -1,10 +1,10 @@
-# Firebolt Electrum Plugin ⚡ 🕵️🌀
+# Firebolt Electrum Plugin w/ Coinjoin ⚡ 🕵️🌀
+
+[![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 
 **Contributions are welcome**
 
-**Firebolt Electrum Plugin** is a plugin for the Electrum Bitcoin wallet that enables users to participate in CoinJoin transaction powered by ZK Proofs
-
-[![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
+>**Firebolt Electrum Plugin** is a plugin for the Electrum Bitcoin wallet that enables users to participate in CoinJoin transaction powered by ZK Proofs
 
 **CoinJoin Process:**
 
