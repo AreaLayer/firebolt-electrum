@@ -1,5 +1,5 @@
 python == 24.2
 electrum == 4.5.5
-pycryptodome ==3.22.0
+pycryptodome ==3.23.0
 zksk == 0.2.2
 kyber-py ==1.0.1
